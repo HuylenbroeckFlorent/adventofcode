@@ -48,10 +48,7 @@ for i in range(len(schematic_lines)):
 					current_number_adjacency = current_number_adjacency or check(schematic_lines[i+1][j])
 
 				if current_number_adjacency:
-					print('ACCEPTED : '+current_number)
 					current_sum += int(current_number)
-				else:
-					print('REJECTED : '+current_number)
 
 			current_number = ''
 			current_number_adjacency = False
