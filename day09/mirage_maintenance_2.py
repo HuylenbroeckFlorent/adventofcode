@@ -11,10 +11,10 @@ for sequence in sequences:
 	while list(set(diffs[-1])) != [0]:
 		diffs.append([diffs[-1][i+1] - diffs[-1][i] for i in range(len(diffs[-1])-1)])
 
-	# Adding placeholders and filling them is actually the same as summing the last value for each subsequence
-	# Except this time we need alterating plus and minus sign before the values because we are not adding a value to the previous one,
+	# Adding placeholders and filling them is actually the same as summing the first value for each subsequence
+	# For this part we need alterating plus and minus sign before the values because we are not adding a value to the previous one anymore,
 	# instead we are substracting a value from the previous one.
-	# Having alteratin plus and minus simulates the accumulation of minus signs when iteratively substracting values from one subsequence to its parent sequence. 
+	# Having alterating plus and minus simulates the accumulation of minus signs when iteratively substracting values from one subsequence to its parent sequence. 
 	current_sum += sum([diffs[i][0]*((-1)**i) for i in range(len(diffs))])
 
 print(current_sum)
